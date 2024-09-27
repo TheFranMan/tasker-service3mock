@@ -30,7 +30,7 @@ func UserGet(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	err = json.NewEncoder(w).Encode(User{ID: 1, Email: params.Email})
 	if nil != err {
-		w.WriteHeader(http.StatusOK)
+		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 }
