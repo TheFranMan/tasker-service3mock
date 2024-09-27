@@ -20,8 +20,8 @@ func New() *Server {
 		fmt.Fprint(w, `{"status": "OK"}`)
 	})
 
-	r.HandleFunc("/user/{id}", handler.UserGet).Methods(http.MethodGet)
-	r.HandleFunc("/user/{id}", handler.UserUpdate).Methods(http.MethodPost)
+	r.HandleFunc("/user", handler.UserGet).Methods(http.MethodGet)
+	r.HandleFunc("/user", handler.UserUpdate).Methods(http.MethodPost)
 	r.HandleFunc("/user", handler.UserDelete).Methods(http.MethodDelete)
 
 	return &Server{
